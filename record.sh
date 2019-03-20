@@ -4,6 +4,8 @@
 DURATION=05
 IPC_NAME=ipc42
 FIX=mkv
+
+# replace the ip and path(if nessary) with your own ipc camera.
 RTSP_URI=rtsp://192.168.1.77:554/stream1
 
 DATE=`date +%y%m%d_%H_%M_%S`
