@@ -6,6 +6,17 @@ The record file use the *.mkv format, it can be opened in your media players (VL
 
 Have fun!!!
 
+# Install
+
+install:
+
+    ./install_rec.sh
+
+uninstall: 
+
+    ./uninstall_rec.sh
+
+
 # author
 
 lukejet <lukejet@163.com>
