@@ -8,14 +8,17 @@ Have fun!!!
 
 # Install
 
-install:
+ipcRecord depence on ffmpeg, so install ffmpeg first.
+
+    sudo apt install ffmpeg
+
+install ipcRecord:
 
     ./install_rec.sh
 
-uninstall: 
+uninstall ipcRecord: 
 
     ./uninstall_rec.sh
-
 
 # author
 
