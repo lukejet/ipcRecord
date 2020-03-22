@@ -5,3 +5,5 @@ A small shell script file set, works for the recording of the ipc cameras. If yo
 The record file use the *.mkv format, it can be opened in your media players (VLC or Mplayer).
 
 Have fun!!!
+
+2020
