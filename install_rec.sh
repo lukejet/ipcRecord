@@ -1,5 +1,10 @@
 #!/bin/bash
 
+read -p "Please input your ipc name [ipc]:" IPC_NAME
+if [ -z "$IPC_NAME" ]; then
+	IPC_NAME=ipc
+fi
+
 read -p "Please set rtsp url from your IPC Camera [rtsp://172.18.1.123/stream1] : " CAMURL
 if [ -z "$CAMURL" ]; then
 	CAMURL=rtsp://172.18.1.123/stream1
@@ -10,6 +15,7 @@ if [ -z "$REC_PATH" ]; then
 	REC_PATH=/var/record	
 fi
 
+echo $IPC_NAME
 echo $CAMURL 
 echo $REC_PATH
 
@@ -25,10 +31,10 @@ chmod + /usr/local/bin/record.sh
 chmod + /usr/local/bin/mg_recs.sh
 
 crontab -l > crontab.bak
-echo "*/5 * * * * /usr/local/bin/record.sh 5" >> crontab.bak
-echo "*/30 * * * * /usr/local/bin/mg_recs.sh" >> crontab.bak
+echo "*/5 * * * * /usr/local/bin/record.sh $IPC_NAME $CAMURL 5" >> crontab.bak
+echo "*/30 * * * * /usr/local/bin/mg_recs.sh $IPC_NAME" >> crontab.bak
 
-#crontab crontab.bak
-#/etc/init.d/cron restart
+crontab crontab.bak
+/etc/init.d/cron restart
 
 rm crontab.bak
