@@ -1,5 +1,6 @@
 #!/bin/bash
 
+IPC_NAME=$1
 # manage records by date
 
 function manage_date
@@ -18,7 +19,6 @@ OLD_TIME=`date -d "@${OLD_SEC}" +%T`
 
 echo $OLD_TIME
 
-IPC_NAME=ipc42
 REC_PATH=/var/record/$IPC_NAME/
 
 FILES=${REC_PATH}${IPC_NAME}_`date -d "@${OLD_SEC}" +%y%m%d_%H`_*.mkv
