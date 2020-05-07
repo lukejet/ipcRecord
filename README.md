@@ -6,4 +6,22 @@ The record file use the *.mkv format, it can be opened in your media players (VL
 
 Have fun!!!
 
-2020
+# Install
+
+ipcRecord depence on ffmpeg, so install ffmpeg first.
+
+    sudo apt install ffmpeg
+
+install ipcRecord:
+
+    ./install_rec.sh
+
+It will ask for parameters like ipc name, camera url and record store path, input the values as you think.
+
+uninstall ipcRecord: 
+
+    ./uninstall_rec.sh
+
+# author
+
+lukejet <lukejet@163.com>

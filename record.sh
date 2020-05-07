@@ -1,12 +1,16 @@
 #!/bin/bash
 
 
-DURATION=05
-IPC_NAME=ipc42
-FIX=mkv
+DURATION=$3
+IPC_NAME=$1
+FIX=mp4
+
+if [ -z $DURATION ]; then
+        DURATION=05
+fi
 
 # replace the ip and path(if nessary) with your own ipc camera.
-RTSP_URI=rtsp://192.168.1.77:554/stream1
+RTSP_URI=$2
 
 DATE=`date +%y%m%d_%H_%M_%S`
 REC_PATH=/var/record/$IPC_NAME/
@@ -16,8 +20,8 @@ mkdir -p $REC_PATH
 
 echo $DATE
 echo $FILE_NAME
-echo ffmpeg -hide_banner -rtsp_transport tcp -t 00:$DURATION:00 -i $RTSP_URI -vcodec copy -acodec copy $FILE_NAME
+echo ffmpeg -hide_banner -rtsp_transport tcp -t 00:$DURATION:00 -i $RTSP_URI -vcodec copy -acodec aac $FILE_NAME
 
-ffmpeg -hide_banner -rtsp_transport tcp -t 00:$DURATION:00 -i $RTSP_URI -vcodec copy -acodec copy $FILE_NAME
+nohup ffmpeg -hide_banner -t 00:$DURATION:00 -i $RTSP_URI -vcodec copy -acodec aac $FILE_NAME &
 
 
