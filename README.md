@@ -2,11 +2,11 @@
 
 A small shell script file set, works for the recording of the ipc cameras. If you have a home camera, config the ip address of the camera in the record.sh.
 
-The record file use the *.mkv format, it can be opened in your media players (VLC or Mplayer).
+The record file use the *.mp4 file format, it can be opened in your media players (VLC or Mplayer).
 
 Have fun!!!
 
-# Install
+## Install
 
 ipcRecord depence on ffmpeg, so install ffmpeg first.
 
@@ -16,12 +16,14 @@ install ipcRecord:
 
     ./install_rec.sh
 
-It will ask for parameters like ipc name, camera url and record store path, input the values as you think.
+It will ask for parameters like ipc name, camera rtsp url and record store path, input the values as you think.
 
-uninstall ipcRecord: 
+uninstall ipcRecord:
 
     ./uninstall_rec.sh
 
-# author
+not yet.
+
+## author
 
 lukejet <lukejet@163.com>
